@@ -1,13 +1,18 @@
-import spiffyUrlManipulator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import models.Id;
+
 
 public class ServerController() {
+
+
     private String rootURL = "http://zipcode.rocks:8085";
 
-    private ServerController svr = new ServerController();
+    private static ServerController svr = new ServerController();
 
     private ServerController() {}
 
-    public static shared() {
+    public static ServerController shared() {
+
         return svr;
     }
 
