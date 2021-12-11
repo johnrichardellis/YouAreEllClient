@@ -7,6 +7,7 @@ import models.Id;
 import models.Message;
 
 public class MessageController {
+    // WILL NEED TO COMPLETE THINGS IN HERE
 
     private HashSet<Message> messagesSeen;
     // why a HashSet??

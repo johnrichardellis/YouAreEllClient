@@ -5,9 +5,16 @@ import controllers.*;
 public class YouAreEll {
 
     TransactionController tt;
+MessageController messageController;
+IdController idController;
 
     public YouAreEll (TransactionController t) {
         this.tt = t;
+    }
+
+    public YouAreEll(MessageController messageController, IdController idController) {
+        this.messageController = messageController;
+        this.idController = idController;
     }
 
     public static void main(String[] args) {
@@ -18,6 +25,10 @@ public class YouAreEll {
         ));
         System.out.println(urlhandler.MakeURLCall("/ids", "GET", ""));
         System.out.println(urlhandler.MakeURLCall("/messages", "GET", ""));
+    }
+
+    private String MakeURLCall(String s, String get, String s1) {
+        return "";
     }
 
     public String get_ids() {

@@ -1,9 +1,18 @@
 package models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+
+
 /* 
  * POJO for an Id object
  */
+
+ @Entity
 public class Id {
+    @Id
+    @GeneratedValue   
+
     private String uid = "";
     private String name = "";
     private String github = "";
@@ -14,9 +23,9 @@ public class Id {
         return uid;
     }
 
-//    public void setUid(String uid) {
-//        this.uid = uid;
-//    }
+   public void setUid(String uid) {
+       this.uid = uid;
+   }
 
     public String getName() {
         return name;
