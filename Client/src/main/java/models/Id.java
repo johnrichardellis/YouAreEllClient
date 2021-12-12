@@ -1,46 +1,56 @@
 package models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
+//import javax.persistence.Column;
+//import javax.persistence.Entity;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.Table;
 
 
 /* 
  * POJO for an Id object
  */
 
- @Entity
- @Table
+// @Entity
+// @Table
 public class Id {
 
 
-     @Id
-    @GeneratedValue   
+//     @Id
+//    @GeneratedValue
 
-    private String uid = "";
+    private String userid = "";
     private String name = "";
     private String github = "";
-    private Long id = 0L;
+//    private Long id = 0L;
 
      public Id() {
      }
 
-     public Long getId() {
-         return id;
-     }
+//     public Long getId() {
+//         return id;
+//     }
 
-     public void setId(Long id) {
-         this.id = id;
-     }
+//     public void setId(Long id) {
+//         this.id = id;
+//     }
 
-     public Id (String name, String githubId) {}
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+    public Id (String name, String githubId) {}
 
     public String getUid() {
-        return uid;
+        return userid;
     }
 
    public void setUid(String uid) {
-       this.uid = uid;
+       this.userid = uid;
    }
 
     public String getName() {
@@ -61,6 +71,10 @@ public class Id {
 
     @Override
     public String toString() {
-        return this.name + " (" + this.github + ") ";
+        return "***************************\n"+
+                "userid: "  + userid + '\n' +
+                "name: " + name + '\n' +
+                "github: " + github + '\n';
+
     }
 }

@@ -5,16 +5,18 @@ import controllers.*;
 public class YouAreEll {
 
     TransactionController tt;
-MessageController messageController;
-IdController idController;
+    MessageController messageController;
+    IdController idController;
 
     public YouAreEll (TransactionController t) {
         this.tt = t;
     }
 
+
     public YouAreEll(MessageController messageController, IdController idController) {
         this.messageController = messageController;
         this.idController = idController;
+//        this.tt = new TransactionController(messageController, idController);
     }
 
     public static void main(String[] args) {
@@ -27,15 +29,22 @@ IdController idController;
         System.out.println(urlhandler.MakeURLCall("/messages", "GET", ""));
     }
 
-    private String MakeURLCall(String s, String get, String s1) {
-        return "";
+
+    private String MakeURLCall(String url, String method, String payload) {
+        this.tt = new TransactionController(messageController, idController);
+        if (method.equalsIgnoreCase("GET")) {
+            return tt.getCalls(url);
+        }
+        return null;
     }
 
     public String get_ids() {
-        return tt.makecall("/ids", "GET", "");
+
+        return MakeURLCall("/ids", "GET", "");
     }
 
     public String get_messages() {
+
         return MakeURLCall("/messages", "GET", "");
     }
 

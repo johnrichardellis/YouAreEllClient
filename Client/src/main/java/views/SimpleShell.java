@@ -19,6 +19,7 @@ public class SimpleShell {
         // yep, make an effort to format things nicely, eh?
         System.out.println(output);
     }
+
     public static void main(String[] args) throws java.io.IOException {
 
         YouAreEll webber = new YouAreEll(new MessageController(), new IdController());
@@ -73,6 +74,8 @@ public class SimpleShell {
                     continue;
                 }
 
+                // add other ID end points to use
+
                 // messages
                 if (list.contains("messages")) {
                     String results = webber.get_messages();
@@ -80,6 +83,7 @@ public class SimpleShell {
                     continue;
                 }
                 // you need to add a bunch more.
+                // add other message end points
 
                 //!! command returns the last command in history
                 if (list.get(list.size() - 1).equals("!!")) {
